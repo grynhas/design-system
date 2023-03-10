@@ -1,8 +1,12 @@
-import './App.css';
+import { styled } from "./styles";
+
+const Button = styled("button", {
+  backgroundColor: "$darkHigh",
+});
 
 function App() {
   return (
-    <h1> Hello Word!! </h1>
+    <Button> Hello Word!! </Button>
   );
 }
 
