@@ -1,7 +1,6 @@
 //eslint-disable-next-line @typescript-eslint/no-var-requires
 {
     "compilerOptions": {
-      "module": "commonjs",
       "outDir": "dist",
       "composite": false,
       "declaration": true,
@@ -9,6 +8,7 @@
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true,
       "inlineSources": false,
+      "module": "ESNext",
       "isolatedModules": true,
       "moduleResolution": "node",
       "noUnusedLocals": false,
@@ -20,7 +20,7 @@
       "strictNullChecks": true,
       "noImplicitAny": true,
       "noImplicitReturns": true,
-      "baseUrl": "src",
+      "baseUrl": "./src",
       "paths": {
         "@components/*": ["components/*"],
         "@utils/*": ["utils/*"],
