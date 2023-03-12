@@ -1,5 +1,5 @@
 import { createStitches, defaultThemeMap } from '@stitches/react'
-import { colors, fonts, fontSizes, fontWeights, lineHeights, space } from '../tokens'
+import { colors, fonts, fontSizes, fontWeights, lineHeights, space, radii } from '../tokens'
 
 export const {
   styled,
@@ -14,11 +14,7 @@ export const {
   themeMap: {
     ...defaultThemeMap,
     height: 'space',
-    width: 'space',
-    minWidth: 'space',
-    maxWidth: 'space',
-    minHeight: 'space',
-    maxHeight: 'space'
+    width: 'space'
   },
   theme: {
     colors,
@@ -26,6 +22,7 @@ export const {
     fontSizes,
     fontWeights,
     lineHeights,
-    space
+    space,
+    radii
   }
 })
