@@ -1,27 +1,7 @@
 
-import StarSvg from 'img/StarSvg'
 import React, { useState } from 'react'
-import { styled } from '../styles'
-
-const Star = styled('button', {
-  color: '$darkHigh',
-  cursor: 'pointer',
-  backgroundColor: '$darkLow',
-  borderRadius: '50%',
-  border: 'none',
-  width: '$10',
-  height: '$10',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexWrap: 'wrap',
-  '&:focus': {
-    borderColor: '$magenta'
-  },
-  '&.certo': {
-    // backgroundColor: '$magenta'
-  }
-})
+import { Box } from './Box'
+import ButtonStar from './ButtonStar'
 
 export interface RatingProps {
   onChange: (rating: number) => void
@@ -33,24 +13,24 @@ const Rating: React.FC<RatingProps> = ({ onChange, numberStars }) => {
   const stars = []
   for (let i = 0; i < numberStars; i++) {
     stars.push(
-      <Star
-        aria-label={`Avaliar com ${i + 1} estrelas`}
-        key={i}
-        className={rating > i ? 'certo' : ''}
-        onClick={() => {
+        <ButtonStar key={i} index={i} rating={rating} onChange={() => {
           setRating(i + 1)
           onChange(i + 1)
-        }}>
-            <StarSvg
-                fill={rating > i ? '#fff700' : '#fff'}
-            />
-         </Star>
+        }} />
     )
   }
   return (
-    <>
+    <Box
+    css={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '$2',
+      width: '100%',
+      maxWidth: '$80'
+    }}>
         {stars}
-    </>
+    </Box>
   )
 }
 
