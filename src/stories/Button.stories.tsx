@@ -2,7 +2,6 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Button, type ButtonProps } from '../components'
 import { FaBeer } from 'react-icons/fa'
 
-// eslint-disable-next-line @typescript-eslint/consistent-type-assertions
 export default {
   title: 'Form/Button',
   component: Button,
