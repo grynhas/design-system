@@ -1,6 +1,6 @@
 import Rating from '../components/Rating'
 import React, { useState } from 'react'
-import StarSvg from 'img/StarSvg'
+import { TextArea, TextInput } from '../components'
 interface FormValues {
   rating: number
   name: string
@@ -36,6 +36,7 @@ const Form = () => {
     })
   }
 
+  console.log('teste aqui', formValues)
   return (
     <form onSubmit={handleSubmit}>
       {/* Incluir logo e texto aqui */}
@@ -48,7 +49,7 @@ const Form = () => {
       </label>
       <label>
         Nome:
-        <input
+        <TextInput
           type="text"
           value={name}
           onChange={handleNameChange}
@@ -56,8 +57,7 @@ const Form = () => {
       </label>
       <label>
         Comentário:
-        <StarSvg />
-        <textarea
+        <TextArea
           value={comment}
           onChange={handleCommentChange}
         />

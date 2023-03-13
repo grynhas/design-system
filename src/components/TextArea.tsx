@@ -1,20 +1,18 @@
 import { type ComponentProps, type ElementType } from 'react'
 import { styled } from '../styles'
 
-export const TextInput = styled('input', {
+export const TextArea = styled('textarea', {
   padding: '$3 $4',
   borderRadius: '$sm',
   boxSizing: 'border-box',
   border: '2px solid $darkHigh',
-  display: 'flex',
-  alignItems: 'baseline',
-
   fontFamily: '$default',
   fontSize: '$sm',
   color: '$darkHigh',
   fontWeight: 'regular',
   background: 'transparent',
   width: '100%',
+  minHeight: '80px',
 
   '&:focus': {
     borderColor: '$blue',
@@ -23,15 +21,15 @@ export const TextInput = styled('input', {
 
   '&:disabled': {
     cursor: 'not-allowed',
-    opacity: 0.5 // reduz a opacidade quando o input está desabilitado
+    opacity: 0.5
   },
 
-  '&:placeholder': {
+  '&::placeholder': {
     color: '$darkLow',
-    opacity: 0.5 // reduz a opacidade do placeholder para torná-lo menos proeminente
+    opacity: 0.5
   }
 })
 
-export interface TextInputProps extends ComponentProps<typeof TextInput> {
+export interface TextAreaProps extends ComponentProps<typeof TextArea> {
   as?: ElementType
 }
