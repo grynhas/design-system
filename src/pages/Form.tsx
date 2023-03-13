@@ -1,6 +1,6 @@
 import Rating from '../components/Rating'
 import React, { useState } from 'react'
-import { TextArea, TextInput } from '../components'
+import { Button, Text, TextArea, TextInput } from '../components'
 interface FormValues {
   rating: number
   name: string
@@ -48,7 +48,8 @@ const Form = () => {
          />
       </label>
       <label>
-        Nome:
+        <Text as='span' size='lg'>Nome:</Text>
+
         <TextInput
           type="text"
           value={name}
@@ -56,13 +57,13 @@ const Form = () => {
         />
       </label>
       <label>
-        Comentário:
+      <Text as='span' size='lg'>Comentário:</Text>
         <TextArea
           value={comment}
           onChange={handleCommentChange}
         />
       </label>
-      <button type="submit">Enviar</button>
+      <Button type="submit">Enviar</Button>
     </form>
   )
 }
