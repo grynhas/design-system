@@ -25,7 +25,13 @@ export const Text = styled('p', {
     },
     color: {
       error: { color: '#ff0000' }
+    },
+    align: {
+      left: { textAlign: 'left' },
+      center: { textAlign: 'center' },
+      right: { textAlign: 'right' }
     }
+
   },
 
   defaultVariants: {

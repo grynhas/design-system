@@ -4,7 +4,7 @@ import { styled } from '../styles'
 export const Label = styled('label', {
   display: 'flex',
   flexDirection: 'column',
-  gap: '$sm',
+  gap: '$1',
 
   variants: {
     variant: {

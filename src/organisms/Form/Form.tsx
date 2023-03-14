@@ -1,6 +1,7 @@
-import Rating from './Rating'
+import Rating from '../Rating'
 import React, { useState } from 'react'
-import { Button, Label, Text, TextArea, TextInput } from '../components'
+import { Button, Label, Text, TextArea, TextInput } from '../../components'
+import { FormStyles } from './style'
 
 interface FormValues {
   rating: number
@@ -86,27 +87,27 @@ const Form = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <FormStyles onSubmit={handleSubmit}>
       <Label variant='md'>
-        <Text>Avaliação:</Text>
+        <Text align={'center'}>Marque de 1 á 5 estrelas</Text>
         <Rating onChange={handleRatingChange} numberStars={5} />
-        {(formErrors.rating != null) ? <Text color='error'>{formErrors.rating}</Text> : null}
+        {(formErrors.rating != null) ? <Text align={'center'} color='error'>{formErrors.rating}</Text> : null}
       </Label>
       <Label variant='md' >
-        <Text>Nome:</Text>
+        <Text>Nome</Text>
         <TextInput
         type="text"
         value={name}
         onChange={handleNameChange}
         />
-        {(formErrors.name != null) ? <Text color='error'>{formErrors.name}</Text> : null}
+        {(formErrors.name != null) ? <Text align={'center'} color='error'>{formErrors.name}</Text> : null}
       </Label>
       <Label variant='md'>
-        <Text>Comentário:</Text>
+        <Text>Comentário (opcional)</Text>
         <TextArea value={comment} onChange={handleCommentChange} />
       </Label>
       <Button type="submit">Enviar</Button>
-    </form>
+    </FormStyles>
   )
 }
 

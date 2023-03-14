@@ -9,7 +9,27 @@ export const ContainerBox = styled('div', {
   border: '2px solid $darkHigh',
   borderRadius: '$md',
   boxSizing: 'border-box',
-  overflow: 'hidden'
+  // overflow: 'hidden',
+  variants: {
+    variant: {
+      center: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+      },
+      top: {
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center'
+      },
+      bottom: {
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'center'
+      }
+    }
+  }
 })
 
 export interface ContainerBoxPros extends ComponentProps<typeof ContainerBox> {
