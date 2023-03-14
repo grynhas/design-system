@@ -2,8 +2,9 @@ import Rating from '../Rating'
 import React, { useState } from 'react'
 import { Button, Label, Text, TextArea, TextInput } from '../../components'
 import { FormStyles } from './style'
+import { postFormRating } from 'client'
 
-interface FormValues {
+export interface FormValues {
   rating: number
   name: string
   comment: string
@@ -47,31 +48,6 @@ const Form = () => {
       return event.target.value
     })
   }
-  const validateForm = (formValues: FormValues) => {
-    const errors: Partial<FormPropsError> = {}
-    if (formValues.rating === 0) {
-      errors.rating = 'Por favor, selecione uma avaliação'
-    }
-    if (formValues.name.trim() === '') {
-      errors.name = 'Por favor, insira um nome válido'
-    }
-    setFormErrors(errors)
-    return errors
-  }
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const errors = validateForm(formValues)
-    if (Object.keys(errors).length > 0) {
-      return
-    }
-    setFormValues({
-      ...formValues,
-      name,
-      comment
-    })
-    console.log('Dados do formulário:', formValues)
-  }
 
   const handleRatingChange = (rating: number) => {
     setFormValues(() => {
@@ -85,8 +61,42 @@ const Form = () => {
       }
     })
   }
+  const validateForm = (formValues: FormValues) => {
+    const errors: Partial<FormPropsError> = {}
+    if (formValues.rating === 0) {
+      errors.rating = 'Por favor, selecione uma avaliação'
+    }
+    if (formValues.name.trim() === '') {
+      errors.name = 'Por favor, insira um nome válido'
+    }
+    setFormErrors(errors)
+    return errors
+  }
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    const errors = validateForm(formValues)
+    if (Object.keys(errors).length > 0) {
+      return
+    }
+    setFormValues({
+      ...formValues,
+      name,
+      comment
+    })
+    console.log('Dados do formulário:', formValues)
+    try {
+      const response = await postFormRating(formValues)
+      console.log('Dados enviados para a API:', response)
+      return response
+    } catch (error) {
+      console.log('Erro ao enviar dados para a API:', error)
+      return error
+    }
+  }
 
   return (
+    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     <FormStyles onSubmit={handleSubmit}>
       <Label variant='md'>
         <Text align={'center'}>Marque de 1 á 5 estrelas</Text>
