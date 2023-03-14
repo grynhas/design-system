@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react'
-import { Box } from './Box'
-import ButtonStar from './ButtonStar'
+import { Box } from '../components/Box'
+import ButtonStar from '../components/ButtonStar'
 
 export interface RatingProps {
   onChange: (rating: number) => void

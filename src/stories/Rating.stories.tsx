@@ -1,4 +1,4 @@
-import Rating from '../components/Rating'
+import Rating from '../organisms/Rating'
 import type { Meta, Story } from '@storybook/react'
 
 import { type RatingProps } from '../components'

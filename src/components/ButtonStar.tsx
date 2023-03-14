@@ -33,6 +33,7 @@ const ButtonStar: React.FC<ButtonStarProps> = ({ onChange, index, rating }) => {
       aria-label={`Avaliar com ${index + 1} estrelas`}
       className={isSelected ? 'selected' : ''}
       onClick={() => { onChange() }}
+      type="button"
     >
       <StarSvg
         fill={isSelected ? '#fff700' : '#fff'}

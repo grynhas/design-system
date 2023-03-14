@@ -16,6 +16,14 @@ export const TextInput = styled('input', {
   background: 'transparent',
   width: '100%',
 
+  variants: {
+    variant: {
+      error: {
+        borderColor: '#ff0000'
+      }
+    }
+  },
+
   '&:focus': {
     borderColor: '$blue',
     boxShadow: '0 0 0 4px $blue 20%'
