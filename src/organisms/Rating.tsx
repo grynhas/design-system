@@ -11,6 +11,8 @@ export interface RatingProps {
 const Rating: React.FC<RatingProps> = ({ onChange, numberStars }) => {
   const [rating, setRating] = useState(0)
   const stars = []
+  console.log('numberStars', numberStars)
+  console.log('rating', rating)
   for (let i = 0; i < numberStars; i++) {
     stars.push(
         <ButtonStar key={i} index={i} rating={rating} onChange={() => {
@@ -19,6 +21,7 @@ const Rating: React.FC<RatingProps> = ({ onChange, numberStars }) => {
         }} />
     )
   }
+  console.log(stars)
   return (
     <Box
     css={{

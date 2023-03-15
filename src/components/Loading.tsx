@@ -1,14 +1,5 @@
-// import '../styles/Loading.css'
-
-// export const Loading = () => {
-//   return (
-//     <div className="loading">
-//       <div className="loading__spinner"></div>
-//     </div>
-//   )
-// }
 import { styled } from '../styles'
-import { Text } from './Text'
+import { Heading } from './Heading'
 
 const LoadingWrapper = styled('div', {
   position: 'fixed',
@@ -19,13 +10,13 @@ const LoadingWrapper = styled('div', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: 'rgba(0, 0, 0, 0.5)' // meio transparente
+  backgroundColor: 'rgba(255, 255, 255, 0.7)' // meio transparente
 })
 
 export const Loading = () => {
   return (
     <LoadingWrapper>
-      <Text >Aguarde, estamos processando...</Text>
+      <Heading variant={'loading'} >Aguarde, estamos processando...</Heading>
     </LoadingWrapper>
   )
 }

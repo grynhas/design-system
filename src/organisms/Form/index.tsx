@@ -14,8 +14,14 @@ interface FormPropsError {
   name?: string
   comment?: string
 }
+interface FormProps {
+  setLoading: React.Dispatch<React.SetStateAction<boolean>>
+  setModal: React.Dispatch<React.SetStateAction<boolean>>
+  setModalType: React.Dispatch<React.SetStateAction<boolean>>
+  setMensagem: React.Dispatch<React.SetStateAction<string>>
+}
 
-const Form = () => {
+const Form = ({ setLoading, setModal, setModalType, setMensagem }: FormProps) => {
   const [name, setName] = useState<string>('')
   const [comment, setComment] = useState<string>('')
   const [formErrors, setFormErrors] = useState<FormPropsError>({})
@@ -36,6 +42,17 @@ const Form = () => {
         name: event.target.value
       })
       return event.target.value
+    })
+  }
+  const clearForm = () => {
+    setFormValues(() => {
+      setName('')
+      setComment('')
+      return {
+        rating: 0,
+        name: '',
+        comment: ''
+      }
     })
   }
 
@@ -79,19 +96,32 @@ const Form = () => {
     if (Object.keys(errors).length > 0) {
       return
     }
-    setFormValues({
-      ...formValues,
-      name,
-      comment
+    setFormValues(() => {
+      setLoading(true)
+      return ({
+        ...formValues,
+        name,
+        comment
+      })
     })
-    console.log('Dados do formulário:', formValues)
     try {
       const response = await postFormRating(formValues)
-      console.log('Dados enviados para a API:', response)
-      return response
+      console.log('Resposta da API:', response)
+      setModal(() => {
+        setMensagem('Obrigado por Avaliar nossos serviços!')
+        setModalType(true)
+        setLoading(false)
+        clearForm()
+        return true
+      })
     } catch (error) {
-      console.log('Erro ao enviar dados para a API:', error)
-      return error
+      setModal(() => {
+        setMensagem('Ocorreu um erro ao enviar os dados, tente novamente mais tarde!')
+        setModalType(false)
+        setLoading(false)
+        clearForm()
+        return true
+      })
     }
   }
 

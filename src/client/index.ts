@@ -1,4 +1,4 @@
-import { type FormValues } from 'organisms/Form/Form'
+import { type FormValues } from 'organisms/Form'
 
 const mockData = [{
   id: 1,
@@ -8,14 +8,18 @@ const mockData = [{
 }]
 
 export async function postFormRating (formData: FormValues) {
-  return await new Promise((resolve) => {
+  return await new Promise((resolve, reject) => {
     console.log('formData', formData)
     setTimeout(() => {
-      resolve(mockData.push({
+      mockData.push({
         id: Math.floor(Math.random() * 1000),
         ...formData
-      }))
+      })
+      console.log('dados cadastrados:', mockData)
+      Math.floor(Math.random() * 10) > 5
+        ? resolve({ status: 200 })
+        // eslint-disable-next-line prefer-promise-reject-errors
+        : reject({ status: 500 })
     }, 2000)
-    console.log('dados cadastrados:', mockData)
   })
 }

@@ -31,12 +31,12 @@ export const TextInput = styled('input', {
 
   '&:disabled': {
     cursor: 'not-allowed',
-    opacity: 0.5 // reduz a opacidade quando o input está desabilitado
+    opacity: 0.5
   },
 
   '&:placeholder': {
     color: '$darkLow',
-    opacity: 0.5 // reduz a opacidade do placeholder para torná-lo menos proeminente
+    opacity: 0.5
   }
 })
 
