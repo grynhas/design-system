@@ -40,6 +40,18 @@ export const Button = styled('button', {
 
         '&:disabled': {
           backgroundColor: '$darkMedium'
+        },
+
+        '&:focus': {
+          boxShadow: '0 0 0 2px $colors$lightHigh'
+        },
+
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'none'
+        },
+
+        '&:active': {
+          opacity: 0.8
         }
       },
 
@@ -55,6 +67,18 @@ export const Button = styled('button', {
         '&:disabled': {
           color: '$darkLow',
           borderColor: '$darkLow'
+        },
+
+        '&:focus': {
+          boxShadow: '0 0 0 2px $colors$lightHigh'
+        },
+
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'none'
+        },
+
+        '&:active': {
+          opacity: 0.8
         }
       },
 
@@ -67,6 +91,18 @@ export const Button = styled('button', {
 
         '&:disabled': {
           color: '$darkLow'
+        },
+
+        '&:focus': {
+          boxShadow: '0 0 0 2px $colors$lightHigh'
+        },
+
+        '&:focus:not(:focus-visible)': {
+          boxShadow: 'none'
+        },
+
+        '&:active': {
+          opacity: 0.8
         }
       }
     },
@@ -87,7 +123,6 @@ export const Button = styled('button', {
     size: 'md'
   }
 })
-
 export interface ButtonProps extends ComponentProps<typeof Button> {
   as?: ElementType
 }

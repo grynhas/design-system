@@ -8,6 +8,15 @@ export const Heading = styled('h2', {
   color: '$darkHigh',
 
   variants: {
+    variant: {
+      loading: {
+        fontSize: '$xl',
+        color: '$darkHigh',
+        textAlign: 'center',
+        fontWeight: '$bold'
+      }
+    },
+
     size: {
       sm: { fontSize: '$xl' },
       md: { fontSize: '$2xl' },

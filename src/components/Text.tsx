@@ -22,7 +22,16 @@ export const Text = styled('p', {
       '7xl': { fontSize: '$7xl' },
       '8xl': { fontSize: '$8xl' },
       '9xl': { fontSize: '$9xl' }
+    },
+    color: {
+      error: { color: '#ff0000' }
+    },
+    align: {
+      left: { textAlign: 'left' },
+      center: { textAlign: 'center' },
+      right: { textAlign: 'right' }
     }
+
   },
 
   defaultVariants: {

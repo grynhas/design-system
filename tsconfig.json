@@ -19,6 +19,7 @@
     "strictNullChecks": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
+    "typeRoots": ["./src/types", "./node_modules/@types"],
     "baseUrl": "./src",
     "paths": {
       "@components/*": ["components/*"],

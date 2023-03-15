@@ -1,11 +1,11 @@
-import { styled } from './styles'
-
-const Button = styled('button', {
-  backgroundColor: '$darkHigh'
-})
+import { globalStyles } from './styles/global'
+import { EvaluationPage } from 'pages/EvaluationPage'
 
 function App () {
-  return <Button> Hello Word!! </Button>
+  globalStyles()
+  return (
+    <EvaluationPage />
+  )
 }
 
 export default App
