@@ -40,13 +40,10 @@ http://localhost:3000. Você pode acessar a aplicação em seu navegador no ende
 
 ### Para visualizar o Storybook da aplicação
 ```
-yarn run storybook
+yarn storybook
 ```
 
 Esse comando inicia o servidor do Storybook em http://localhost:6006. Você pode acessar o Storybook em seu navegador no endereço http://localhost:6006.
 
-
-
-
-
-
+## Estrutura de Pastas
+![Estrutura de Pastas](/imagensDM/organizacao.jpeg)
