@@ -8,13 +8,13 @@ node -v
 
 ### Clone o projeto
 ```
-git clone https://github.com/grynhas/design-system-serasa.git
+git clone https://github.com/grynhas/design-system.git
 ```
 
 ### Entre no diretório raiz
 
 ```
-cd design-system-serasa
+cd design-system
 ```
 
 ## Instale as dependências
