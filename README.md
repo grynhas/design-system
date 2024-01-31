@@ -19,6 +19,9 @@ cd design-system
 
 ## Instale as dependências
 ```
+npm install -g nodemon
+```
+```
 yarn
 ```
 
